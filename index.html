@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Odore Perla+ - A symphony of elegant, premium fragrances and bespoke scents crafted to transcend time. Find your signature scent today.">
+    <title>Odore Perla+ | Haute Parfumerie</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header class="header">
+        <div class="logo">
+            Odore Perla<span class="logo-plus">+</span>
+        </div>
+        <nav class="nav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#collection" class="nav-link">Collection</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#reviews" class="nav-link">Reviews</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <button class="icon-btn" id="search-toggle" aria-label="Search">
+                <i data-lucide="search"></i>
+            </button>
+            <button class="icon-btn" id="cart-toggle" aria-label="Shopping Cart">
+                <i data-lucide="shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </button>
+            <button class="quiz-cta" id="quiz-btn">Scent Finder</button>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search fragrances (e.g. Amber, Rose, Musk)...">
+            <button class="close-search" id="close-search">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <!-- Abstract design lines -->
+        <div class="hero-bg-lines"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">A Symphony<br>of Scent</h1>
+            <p class="hero-subtitle">Indulge in a fragrance crafted to transcend time—a symphony of elegance, mystery, and allure, designed for those who seek beauty in every breath.</p>
+            
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="scrollToSection('collection')">Shop Now</button>
+                <button class="btn btn-secondary" id="hero-details-btn">View Details</button>
+            </div>
+
+            <div class="hero-experts">
+                <h4>Our Experts</h4>
+                <p>Harness the power of natural essences to standout your personality.</p>
+                <a href="#about" class="explore-link">Explore More <i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-display">
+            <!-- Dotted orbit background -->
+            <div class="orbit-container">
+                <div class="orbit orbit-1"></div>
+                <div class="orbit orbit-2"></div>
+                <div class="orbit orbit-3"></div>
+            </div>
+
+            <!-- Perfume Bottle Showcase -->
+            <div class="bottle-wrapper">
+                <img src="assets/suits.png" alt="Signature Suits Perfume" class="hero-bottle-img" id="hero-display-img">
+                <!-- 30% Off Badge -->
+                <div class="discount-badge" id="discount-badge" title="Click to apply coupon!">
+                    <svg viewBox="0 0 100 100" class="badge-text-svg">
+                        <path id="curve" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent"/>
+                        <text class="badge-text">
+                            <textPath href="#curve">30% OFF • SHOP NOW • 30% OFF •</textPath>
+                        </text>
+                    </svg>
+                    <div class="badge-center">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide Navigation indicators -->
+            <div class="hero-slide-nav">
+                <button class="nav-arrow" id="hero-prev"><i data-lucide="chevron-left"></i></button>
+                <div class="slide-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <button class="nav-arrow" id="hero-next"><i data-lucide="chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STATS ROW ==================== -->
+    <section class="stats-row">
+        <div class="stat-item">
+            <span class="stat-num">140+</span>
+            <span class="stat-label">Products Available</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-num">1M+</span>
+            <span class="stat-label">Sales Already</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-num">80+</span>
+            <span class="stat-label">Industrial Franchises</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-num">1.01m</span>
+            <span class="stat-label">Connections</span>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT US SECTION ==================== -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-image-wrapper">
+                <img src="assets/about_us.png" alt="Hand holding perfume bottle" class="about-img">
+            </div>
+            <div class="about-content">
+                <span class="section-tag">About Us</span>
+                <h2 class="section-title">“Our Legacy Of Luxury”</h2>
+                <p class="section-desc">At Odore Perla, we blend artisanal craftsmanship with the finest ingredients. Each scent is a journey—a sensory experience that embodies grace and sophistication.</p>
+                <button class="btn btn-secondary" onclick="scrollToSection('collection')">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURED COLLECTION ==================== -->
+    <section class="collection-section" id="collection">
+        <div class="collection-header">
+            <span class="section-tag center">Featured Collection</span>
+            <h2 class="section-title center">Artistry in Every Bottle</h2>
+        </div>
+
+        <div class="collection-carousel-container">
+            <button class="carousel-arrow prev" id="col-prev"><i data-lucide="chevron-left"></i></button>
+            
+            <div class="collection-track-wrapper">
+                <div class="collection-track" id="collection-track">
+                    <!-- Cards will be dynamically injected/styled here -->
+                </div>
+            </div>
+
+            <button class="carousel-arrow next" id="col-next"><i data-lucide="chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- ==================== WHY CHOOSE US ==================== -->
+    <section class="why-us-section">
+        <div class="why-us-container">
+            <div class="why-us-visuals">
+                <div class="grid-card grid-large">
+                    <img src="assets/about_us.png" alt="Scent extraction">
+                </div>
+                <div class="grid-card">
+                    <img src="assets/celestial_blossom.png" alt="Celestial Blossom ingredients">
+                </div>
+                <div class="grid-card">
+                    <img src="assets/noir_elixir.png" alt="Noir Elixir base note blend">
+                </div>
+                <div class="grid-card">
+                    <img src="assets/purity.png" alt="Eco-conscious pedestal design">
+                </div>
+            </div>
+            
+            <div class="why-us-content">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">Luxury Redefined—Crafted for You</h2>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="feature-number">01</span>
+                        <div class="feature-text">
+                            <h3>Artistic Design</h3>
+                            <p>Each fragrance is an art piece, collaged with precision by world-class perfumers.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">02</span>
+                        <div class="feature-text">
+                            <h3>Organic Ingredients</h3>
+                            <p>Sourced from nature's finest, each note embodies pure sophistication.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">03</span>
+                        <div class="feature-text">
+                            <h3>Sustainable Elegance</h3>
+                            <p>Indulge guilt-free with fragrances designed to honor the planet.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">04</span>
+                        <div class="feature-text">
+                            <h3>Exclusive Collections</h3>
+                            <p>One-of-a-kind scents and limited editions that inspire the moments they grace.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <section class="reviews-section" id="reviews">
+        <span class="section-tag center">Testimonials</span>
+        <h2 class="section-title center">What Our Customers Say</h2>
+
+        <div class="reviews-carousel">
+            <div class="review-card" id="review-card">
+                <div class="review-avatar">
+                    <div class="avatar-fallback">SL</div>
+                </div>
+                <div class="rating-stars">
+                    <i data-lucide="star" class="star-filled"></i>
+                    <i data-lucide="star" class="star-filled"></i>
+                    <i data-lucide="star" class="star-filled"></i>
+                    <i data-lucide="star" class="star-filled"></i>
+                    <i data-lucide="star" class="star-filled"></i>
+                </div>
+                <p class="review-text">"Great Service!! Noir Elixir is pure magic. The best seller line, it's perfect for evenings out, and I always receive compliments on it."</p>
+                <div class="review-author">
+                    <span class="author-name">Sophia L.</span>
+                    <span class="author-title">Certified Customer</span>
+                </div>
+            </div>
+
+            <div class="review-nav">
+                <button class="review-arrow" id="rev-prev"><i data-lucide="arrow-left"></i></button>
+                <div class="review-dots" id="rev-dots">
+                    <!-- Dots injected dynamically -->
+                </div>
+                <button class="review-arrow" id="rev-next"><i data-lucide="arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COMMITMENT TO PURITY ==================== -->
+    <section class="purity-section">
+        <div class="purity-container">
+            <div class="purity-content">
+                <span class="section-tag">Responsibility</span>
+                <h2 class="section-title">A Commitment To Purity</h2>
+                <p class="section-desc">We believe in sustainable luxury. Every bottle of Odore Perla is crafted with responsibly sourced ingredients, ensuring a lasting impact on you—not on the environment.</p>
+                <button class="btn btn-primary" onclick="scrollToSection('collection')">Learn More</button>
+            </div>
+            <div class="purity-image-wrapper">
+                <img src="assets/purity.png" alt="Perfume bottle on stone pedestal" class="purity-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER SECTION ==================== -->
+    <section class="newsletter-section" id="contact">
+        <div class="newsletter-box">
+            <h2>Stay Connected with Odore Perla</h2>
+            <p>Receive exclusive offers, first look at new fragrances, and invitations to special events.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="Enter email address" required aria-label="Email Address">
+                <button type="submit" class="btn btn-primary">Subscribe Now</button>
+            </form>
+            <p class="newsletter-success" id="newsletter-success-msg">Thank you for subscribing! Welcome to the world of Odore Perla.</p>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Odore Perla<span class="logo-plus">+</span></h3>
+                <p>Crafting luxury, organic fragrances for those who value elegance and sustainable quality.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <a href="#home">Home</a>
+                <a href="#collection">Collection</a>
+                <a href="#about">About</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Odore Perla+. All rights reserved. Designed for elegance.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================== -->
+    <!-- ==================== INTERACTIVE WINDOWS ==================== -->
+    <!-- ============================================================== -->
+
+    <!-- SHOPPING CART DRAWER -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart"><i data-lucide="x"></i></button>
+        </div>
+        
+        <div class="cart-items" id="cart-items-container">
+            <!-- Items injected by JS -->
+            <div class="cart-empty-state">
+                <i data-lucide="shopping-bag" size="48"></i>
+                <p>Your cart is empty.</p>
+                <button class="btn btn-primary" id="cart-shop-now">Shop Collection</button>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="coupon-section">
+                <input type="text" id="coupon-code" placeholder="Enter promo code (try ODORE30)">
+                <button class="btn-coupon" id="apply-coupon">Apply</button>
+            </div>
+            <div class="coupon-feedback" id="coupon-feedback"></div>
+            
+            <div class="cart-price-summary">
+                <div class="price-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="price-row discount-row" id="cart-discount-row">
+                    <span>Discount (30%)</span>
+                    <span id="cart-discount-val">-$0.00</span>
+                </div>
+                <div class="price-row total-row">
+                    <span>Total</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="proceed-checkout">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+
+    <!-- PRODUCT DETAILS MODAL -->
+    <div class="modal" id="details-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-details"><i data-lucide="x"></i></button>
+            <div class="details-modal-grid">
+                <div class="details-img-area">
+                    <img src="" alt="Perfume Detail" id="modal-perfume-img">
+                </div>
+                <div class="details-info-area">
+                    <span class="modal-tag" id="modal-perfume-family">Olfactive Family</span>
+                    <h3 class="modal-title" id="modal-perfume-name">Fragrance Name</h3>
+                    <p class="modal-price" id="modal-perfume-price">$0.00</p>
+                    <p class="modal-desc" id="modal-perfume-desc">Detailed fragrance description...</p>
+                    
+                    <div class="size-selector">
+                        <h4>Select Size</h4>
+                        <div class="size-options">
+                            <button class="size-opt active" data-size="50">50 ml</button>
+                            <button class="size-opt" data-size="100">100 ml</button>
+                        </div>
+                    </div>
+
+                    <!-- Olfactive Pyramid -->
+                    <div class="olfactive-pyramid">
+                        <h4>Olfactive Pyramid</h4>
+                        <div class="pyramid-levels">
+                            <div class="pyramid-level top-notes">
+                                <span class="level-title"><i data-lucide="wind"></i> Top Notes</span>
+                                <span class="level-content" id="modal-top-notes">Note 1, Note 2</span>
+                            </div>
+                            <div class="pyramid-level heart-notes">
+                                <span class="level-title"><i data-lucide="flower-2"></i> Heart Notes</span>
+                                <span class="level-content" id="modal-heart-notes">Note 3, Note 4</span>
+                            </div>
+                            <div class="pyramid-level base-notes">
+                                <span class="level-title"><i data-lucide="leaf"></i> Base Notes</span>
+                                <span class="level-content" id="modal-base-notes">Note 5, Note 6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary add-to-cart-modal-btn" id="modal-add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCENT FINDER QUIZ MODAL -->
+    <div class="modal" id="quiz-modal">
+        <div class="modal-content quiz-content">
+            <button class="close-modal" id="close-quiz"><i data-lucide="x"></i></button>
+            
+            <!-- Quiz Step 1 -->
+            <div class="quiz-step active" data-step="1">
+                <span class="quiz-progress">Step 1 of 3</span>
+                <h3>Choose a mood or vibe that speaks to you:</h3>
+                <div class="quiz-options">
+                    <button class="quiz-opt" data-ans="fresh">
+                        <i data-lucide="compass"></i>
+                        <span>Fresh, Oceanic & Crisp</span>
+                    </button>
+                    <button class="quiz-opt" data-ans="warm">
+                        <i data-lucide="flame"></i>
+                        <span>Warm, Mysterious & Woody</span>
+                    </button>
+                    <button class="quiz-opt" data-ans="sweet">
+                        <i data-lucide="heart"></i>
+                        <span>Sweet, Floral & Romantic</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Step 2 -->
+            <div class="quiz-step" data-step="2">
+                <span class="quiz-progress">Step 2 of 3</span>
+                <h3>When are you most likely to wear this scent?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-opt" data-ans="day">
+                        <i data-lucide="sun"></i>
+                        <span>Daily Office or Casual Outings</span>
+                    </button>
+                    <button class="quiz-opt" data-ans="night">
+                        <i data-lucide="moon"></i>
+                        <span>Formal Galas & Late Nights</span>
+                    </button>
+                    <button class="quiz-opt" data-ans="date">
+                        <i data-lucide="sparkles"></i>
+                        <span>Intimate Dates & Special Moments</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Step 3 -->
+            <div class="quiz-step" data-step="3">
+                <span class="quiz-progress">Step 3 of 3</span>
+                <h3>What is your preferred fragrance intensity?</h3>
+                <div class="quiz-options">
+                    <button class="quiz-opt" data-ans="light">
+                        <i data-lucide="feather"></i>
+                        <span>Light & Airy (Subtle impression)</span>
+                    </button>
+                    <button class="quiz-opt" data-ans="medium">
+                        <i data-lucide="scale"></i>
+                        <span>Balanced & Steady (Classic presence)</span>
+                    </button>
+                    <button class="quiz-opt" data-ans="bold">
+                        <i data-lucide="zap"></i>
+                        <span>Intense & Rich (Deep statement)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Result -->
+            <div class="quiz-step" data-step="result">
+                <h3>Your Signature Match</h3>
+                <div class="quiz-result-card">
+                    <img src="" alt="Recommended Perfume" id="quiz-result-img">
+                    <div class="quiz-result-info">
+                        <h4 id="quiz-result-name">Noir Elixir</h4>
+                        <span class="modal-tag" id="quiz-result-tag">Woody Amber</span>
+                        <p id="quiz-result-desc">A deep luxurious fragrance...</p>
+                        <div class="quiz-result-actions">
+                            <button class="btn btn-secondary" id="quiz-result-details">Details</button>
+                            <button class="btn btn-primary" id="quiz-result-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="quiz-restart" id="quiz-restart"><i data-lucide="rotate-ccw"></i> Restart Scent Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT WIZARD MODAL -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content checkout-content">
+            <button class="close-modal" id="close-checkout"><i data-lucide="x"></i></button>
+            
+            <div class="checkout-steps-nav">
+                <div class="checkout-step-indicator active" id="chk-ind-1">1. Shipping</div>
+                <div class="checkout-step-indicator" id="chk-ind-2">2. Payment</div>
+                <div class="checkout-step-indicator" id="chk-ind-3">3. Done</div>
+            </div>
+
+            <form id="checkout-form">
+                <!-- Shipping Details -->
+                <div class="checkout-form-step active" id="checkout-step-1">
+                    <h3>Shipping Address</h3>
+                    <div class="form-group">
+                        <label for="ship-name">Full Name</label>
+                        <input type="text" id="ship-name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="ship-email">Email Address</label>
+                        <input type="email" id="ship-email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="ship-address">Street Address</label>
+                        <input type="text" id="ship-address" required placeholder="123 Luxury Lane">
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="ship-city">City</label>
+                            <input type="text" id="ship-city" required placeholder="Beverly Hills">
+                        </div>
+                        <div class="form-group">
+                            <label for="ship-zip">ZIP Code</label>
+                            <input type="text" id="ship-zip" required placeholder="90210">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary next-step-btn" id="to-payment-btn">Continue to Payment</button>
+                </div>
+
+                <!-- Payment Details -->
+                <div class="checkout-form-step" id="checkout-step-2">
+                    <h3>Payment Details</h3>
+                    
+                    <!-- Interactive Card Preview -->
+                    <div class="credit-card-preview">
+                        <div class="card-chip"></div>
+                        <div class="card-number-display" id="cc-preview-number">•••• •••• •••• ••••</div>
+                        <div class="card-bottom">
+                            <div class="card-holder">
+                                <span class="card-label">CARD HOLDER</span>
+                                <span id="cc-preview-name">JOHN DOE</span>
+                            </div>
+                            <div class="card-expiry">
+                                <span class="card-label">EXPIRES</span>
+                                <span id="cc-preview-expiry">MM/YY</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cc-name">Name on Card</label>
+                        <input type="text" id="cc-name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="cc-num">Card Number</label>
+                        <input type="text" id="cc-num" required placeholder="4111 2222 3333 4444" maxlength="19">
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="cc-expiry">Expiration</label>
+                            <input type="text" id="cc-expiry" required placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="cc-cvv">CVV</label>
+                            <input type="password" id="cc-cvv" required placeholder="•••" maxlength="3">
+                        </div>
+                    </div>
+                    <div class="checkout-actions">
+                        <button type="button" class="btn btn-secondary back-step-btn" id="back-to-ship-btn">Back</button>
+                        <button type="submit" class="btn btn-primary submit-order-btn">Complete Purchase <span id="checkout-final-total">$0.00</span></button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Success State -->
+            <div class="checkout-form-step text-center" id="checkout-step-3">
+                <div class="success-icon-container">
+                    <i data-lucide="check-circle" class="success-icon"></i>
+                </div>
+                <h2>Thank You for Your Order!</h2>
+                <p>Your luxury scent experience is on its way. An order confirmation has been sent to your email.</p>
+                <div class="order-details-box">
+                    <span class="order-id">Order ID: #OP-<span id="success-order-id">98765</span></span>
+                </div>
+                <button class="btn btn-primary close-checkout-success" id="finish-checkout">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti canvas overlay -->
+    <canvas class="confetti-canvas" id="confetti-canvas"></canvas>
+
+    <!-- Javascript Script -->
+    <script src="app.js"></script>
+</body>
+</html>
